@@ -21,8 +21,6 @@ salario_fun decimal (9,2) default 0 check(salario_fun >= 0),
 sexo_fun char(1) default "X" check(sexo_fun in("F","M")),
 primary key (cod_fun));
 
-
-
 create table tbusuarios(
 cod_usu int not null auto_increment,
 nome_usu varchar(50) not null,
@@ -37,8 +35,6 @@ nome_forn varchar(100),
 email_forn varchar(30),
 tel_forn char(10),
 primary key(cod_forn));
-
-
 
 create table tbProdutos(
 cod_prod int not null auto_increment,
@@ -93,9 +89,15 @@ insert into tbCliente(nome,cpf_clie,email_clie) values ('Tocatins','173.455.875-
 insert into tbFornecedor (nome_forn,email_forn,tel_forn) values('Verduras SA','verduras@exemplo.com','97586-9586');
 
 insert into tbfuncionario(nome_fun,email_fun,tel_fun,dataNasc_fun,salario_fun,sexo_fun) values ('Rainundo','rainundo@exemplo.com','45564-6124','1987-02-14',1707.21,'M');
+insert into tbfuncionario(nome_fun,email_fun,tel_fun,dataNasc_fun,salario_fun,sexo_fun) values ('José','jose@exemplo.com','21874-6872','1994-07-11',1387.00,'M');
+
+insert into tbusuarios(nome_usu,senha_usu,cod_fun) values('José','Jose123',2);
+insert into tbusuarios(nome_usu,senha_usu,cod_fun) values('Rainundo','Rainundo123',1);
+
 
 --Visualizando os registros nas tabelas
 
 select * from tbCliente;
 select * from tbFornecedor;
 select * from tbfuncionario;
+select * from tbusuarios;
