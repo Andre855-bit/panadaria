@@ -65,3 +65,29 @@ VALUES
 ('Consultoria de Engenharia', 'Avaliação estrutural e recomendações para reforma', '2024-03-09 14:00:00', 750.00, 1, 'Necessário acesso a documentos estruturais do imóvel');
 
 select * from tbServico;
+
+create table tbPedidos(
+cod_ped int not null auto_increment,
+cod_clie int not null,
+cod_trab int not null,
+cod_serv int not null,
+end_ped char(70) not null,
+data_inic_ped date not null,
+data_fim_ped date not null,
+valor_final_ped decimal (8,2) not null,
+hora_inic_ped time not null,
+hora_fim_ped time not null,
+primary key(cod_ped),
+foreign key (cod_clie) references tbCliente(cod_clie),
+foreign key (cod_trab) references tbTrabalhador(cod_trab),
+foreign key (cod_serv) references tbServico(cod_serv));
+
+desc tbPedidos;
+
+INSERT INTO tbPedidos (cod_clie, cod_trab, cod_serv, end_ped, data_inic_ped, data_fim_ped, valor_final_ped, hora_inic_ped, hora_fim_ped)
+VALUES 
+(1, 2, 1, 'Rua das Palmeiras, 200', '2024-03-10', '2024-03-10', 350.00, '10:00:00', '12:30:00'),
+(2, 3, 2, 'Av. São João, 789', '2024-03-12', '2024-03-12', 500.00, '09:30:00', '15:00:00'),
+(3, 1, 3, 'Rua do Centro, 55', '2024-03-15', '2024-03-15', 750.00, '14:00:00', '17:30:00');
+
+select * from tbPedidos;
