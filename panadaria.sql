@@ -49,7 +49,7 @@ foreign key (cod_forn) references tbFornecedor(cod_forn));
 
 create table tbCliente(
 cod_clie int not null auto_increment,
-nome varchar(100) not null,
+nome_clie varchar(100) not null,
 cpf_clie char(14) not null unique,
 email_clie varchar(100) unique,
 primary key(cod_clie));
@@ -72,7 +72,6 @@ show tables;
 
 desc tbusuarios;
 desc tbfuncionario;
-desc tbgenero;
 desc tbFornecedor;
 desc tbProdutos;
 desc tbCliente;
